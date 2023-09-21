@@ -3,6 +3,7 @@ from fastapi import APIRouter, HTTPException, status
 from api.routes.authentication import router as auth_router
 from api.routes.services import router as service_router
 from api.routes.users import router as users_router
+from api.routes.newsletter import router as newsletter_router
 from core.constants import SUCCESS
 from models.base import Response
 
@@ -11,6 +12,7 @@ router = APIRouter()
 router.include_router(router=users_router)
 router.include_router(router=service_router)
 router.include_router(router=auth_router)
+router.include_router(router=newsletter_router)
 
 
 # hello world router (for "/" path)
